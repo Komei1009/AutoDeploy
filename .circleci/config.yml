@@ -23,4 +23,5 @@ jobs:
       # specify any bash command here prefixed with `run: `
       - run: go get github.com/gin-gonic/gin
       - run: go test -v ./...
-      - run: make build
+      - run: make go/build
+      - run: make docker/build

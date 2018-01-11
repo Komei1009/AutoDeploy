@@ -1,4 +1,7 @@
+ECS_ID := 429564250042
 AWS_REGION     := ap-northeast-1
+APP := auto-deploy
+DOCKER_IMAGE    := $(ECS_ID).dkr.ecr.$(AWS_REGION).amazonaws.com/$(APP):latest
 
 login:
 	aws configure set region $(AWS_REGION)
@@ -8,5 +11,8 @@ login:
 foo:
 	echo hoge
 
-build:
+go/build:
 	env GOOS=linux env GOARCH=amd64 env CGO_ENABLED=0 go build -o ./cmd/main main.go
+
+docker/build:
+	docker build -t $(DOCKER_IMAGE) .
