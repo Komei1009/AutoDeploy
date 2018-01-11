@@ -15,4 +15,4 @@ go/build:
 	env GOOS=linux env GOARCH=amd64 env CGO_ENABLED=0 go build -o ./cmd/main main.go
 
 docker/build:
-	docker build -t APP .
+	docker build -t $(DOCKER_IMAGE) .
