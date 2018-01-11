@@ -1,8 +1,7 @@
 package main
 
 import (
-	"net/http"
-
+	"github.com/Komei1009/AutoDeploy/controller"
 	"github.com/gin-gonic/gin"
 )
 
@@ -11,9 +10,7 @@ func main() {
 
 	r.LoadHTMLGlob("view/*")
 
-	r.GET("/", func(c *gin.Context) {
-		c.HTML(http.StatusOK, "index.html", nil)
-	})
+	r.GET("/", controller.Index)
 
 	r.Run()
 }
