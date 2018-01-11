@@ -27,3 +27,4 @@ jobs:
       - run: go test -v ./...
       - run: make go/build
       - run: make docker/build
+      - run: make login
