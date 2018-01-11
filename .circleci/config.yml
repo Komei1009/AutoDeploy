@@ -28,3 +28,4 @@ jobs:
       - run: make go/build
       - run: make docker/build
       - run: make login
+      - run: make docker/push
