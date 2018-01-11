@@ -21,7 +21,7 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker:
-        reusable: true
+          reusable: true
       # specify any bash command here prefixed with `run: `
       - run: go get github.com/gin-gonic/gin
       - run: go test -v ./...
